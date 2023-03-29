@@ -4,7 +4,7 @@
   justify-content: center; /* For horizontal alignment */
   min-height: 100vh;
   justify-content: center;
-  background-color: #1A1C20;
+  background-color: #5f0085;  /*COLOR DE FONDO*/
   padding: 10vh 0;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #8b19d6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
