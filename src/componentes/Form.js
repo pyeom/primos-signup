@@ -35,19 +35,24 @@ export const Form = () => {
 
   return (
     <div className='Form'>
-      <br />
-      <label>
-        <b>ROL</b><br /><input placeholder="123456789-k" onChange={handle_rol} onBlur={rol_verification} value={rol}/>
-        {error1 && (<div style={{color: '#e03434'}}>Rol Invalido</div>)}
-      </label>
-      <br />
-      <label>
-        <b>Nombre completo</b><br /><input placeholder="Luis Apellido" onChange={event => set_name(event.target.value)} value={name}/>
-      </label>
-      <br />
-      <label>
-        <b>Apodo</b><br /><input placeholder="Lucho" defaultValue={name.split(' ')[0]}/>
-      </label>
+
+            <form action="" class="form">
+      <h1 style={{color:'aliceblue'}}>Ingrese sus datos:</h1>
+                <div class="form__div">
+                    <input type="text" class="form__input" placeholder="1234567890-k" onChange={handle_rol} onBlur={rol_verification} value={rol} />
+                    <label for="" class="form__label"> <b>Rol</b> </label>
+                </div>
+                {error1 && (<div style={{color: '#e03434'}}>Rol Invalido</div>)}
+                <ul></ul>
+                <div class="form__div">
+                    <input type="text" class="form__input" placeholder="Luis Apellido" onChange={event => set_name(event.target.value)} value={name}/>
+                    <label for="" class="form__label"><b>Nombre completo</b></label>
+                </div>
+                <div class="form__div">
+                    <input type="text" class="form__input" placeholder="Lucho" defaultValue={name.split(' ')[0]}/>
+                    <label for="" class="form__label"><b>Apodo</b></label>
+                </div>
+            </form>
       <div>
         <u>Nota</u>: Elige un apodo fácilmente identificable por todos tus compañeros;
         tu primer, segundo, ámbos nombres o tu nombre social son una buena opción, <b>evita usar tu Gamer Tag</b> o
