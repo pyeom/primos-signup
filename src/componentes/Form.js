@@ -39,9 +39,9 @@ export const Form = () => {
       <div class="gapped">
         <div>
           <label class="input_label"> <b>Rol</b> </label> <br />
-          <input type="text" class="input_field" placeholder="1234567890-k" onChange={handle_rol} onBlur={rol_verification} value={rol} />
+          <input type="text" class="input_field" placeholder="123456789-k" onChange={handle_rol} onBlur={rol_verification} value={rol} />
         </div>
-        {error1 && (<div style={{color: '#e03434'}}>Rol Invalido</div>)}
+        {error1 && (<div style={{color: '#e03434'}}>Rol Inválido</div>)}
         <div>
           <label for="" class="input_label"><b>Nombre completo</b></label> <br />
           <input type="text" class="input_field" placeholder="Luis Apellido" onChange={event => set_name(event.target.value)} value={name}/>
