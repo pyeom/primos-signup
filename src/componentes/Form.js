@@ -35,35 +35,47 @@ export const Form = () => {
 
   return (
     <div className='Form'>
-
-            <form action="" class="form">
-      <h1 style={{color:'aliceblue'}}>Ingrese sus datos:</h1>
-                <div class="form__div">
-                    <input type="text" class="form__input" placeholder="1234567890-k" onChange={handle_rol} onBlur={rol_verification} value={rol} />
-                    <label for="" class="form__label"> <b>Rol</b> </label>
-                </div>
-                {error1 && (<div style={{color: '#e03434'}}>Rol Invalido</div>)}
-                <ul></ul>
-                <div class="form__div">
-                    <input type="text" class="form__input" placeholder="Luis Apellido" onChange={event => set_name(event.target.value)} value={name}/>
-                    <label for="" class="form__label"><b>Nombre completo</b></label>
-                </div>
-                <div class="form__div">
-                    <input type="text" class="form__input" placeholder="Lucho" defaultValue={name.split(' ')[0]}/>
-                    <label for="" class="form__label"><b>Apodo</b></label>
-                </div>
-            </form>
-      <div>
+      <h><b>Ingrese sus datos</b></h>
+      <form action="" class="form">
+        <div class="form__div">
+          <label class="input_label"> <b>Rol</b> </label> <br />
+          <input type="text" class="input_field" placeholder="1234567890-k" onChange={handle_rol} onBlur={rol_verification} value={rol} />
+        </div>
+        {error1 && (<div style={{color: '#e03434'}}>Rol Invalido</div>)}
+        <br />
+        <div class="form__div">
+          <label for="" class="input_label"><b>Nombre completo</b></label> <br />
+          <input type="text" class="input_field" placeholder="Luis Apellido" onChange={event => set_name(event.target.value)} value={name}/>
+        </div>
+        <br />
+        <div class="form__div">
+          <label for="" class="input_label"><b>Apodo</b></label> <br />
+          <input type="text" class="input_field" placeholder="Lucho" defaultValue={name.split(' ')[0]}/>
+        </div>
+      </form>
+      <br />
+      <div className="boxed">
         <u>Nota</u>: Elige un apodo fácilmente identificable por todos tus compañeros;
-        tu primer, segundo, ámbos nombres o tu nombre social son una buena opción, <b>evita usar tu Gamer Tag</b> o
+        tu primer, segundo, ámbos nombres o tu nombre social son una buena opción. <b>Evita usar tu Gamer Tag</b> o
         cualquier apodo que sea difícil de relacionar contigo para alguien que no te conoce de primera mano.
-        <ul>
-          <li>Felipe Rojas → Pipe ✔️</li>
-          <li>Felipe Rojas → pyeom ❌</li>
-          <li>Vicente Mackenzie → Makenki ✔️</li>
-          <li>Vicente Mackenzie → 3122 ❌</li>
-        </ul>
+        <br/>
+        <br/>
+
+
+        <div class="flex-parent-element">
+          <div class="flex-child-element magenta">
+            Felipe Rojas → Pipe ✔️<br/>
+            Felipe Rojas → pyeom ❌
+          </div>
+          <div class="flex-child-element green">
+            Vicente Mackenzie → Makenki ✔️<br/>
+            Vicente Mackenzie → 3122 ❌
+          </div>
+        </div>
+
+
+
       </div>
-    </div>
+      </div>
   )
 }
