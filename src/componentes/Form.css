@@ -1,11 +1,5 @@
 .Form {
-    align-items: center;
-    margin: auto;
-    color: aliceblue;
-}
-
-.Form div{
-  width: 100%;
+  color: aliceblue;
 }
 
 .input_label {
@@ -37,6 +31,7 @@
   -webkit-box-sizing: border-box;
   padding: 11px;
   border: 1px solid red;
+  border-radius: 10px;
   background-color: rgba(255, 120, 120, 0.25);
   align-items: center;
   text-align: justify;
@@ -54,4 +49,10 @@
 
 h{
   font-size: 30px;
+}
+
+.gapped {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
 }

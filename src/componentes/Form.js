@@ -34,34 +34,29 @@ export const Form = () => {
   }
 
   return (
-    <div className='Form'>
+    <div className='Form gapped'>
       <h><b>Ingrese sus datos</b></h>
-      <form action="" class="form">
-        <div class="form__div">
+      <div class="gapped">
+        <div>
           <label class="input_label"> <b>Rol</b> </label> <br />
           <input type="text" class="input_field" placeholder="1234567890-k" onChange={handle_rol} onBlur={rol_verification} value={rol} />
         </div>
         {error1 && (<div style={{color: '#e03434'}}>Rol Invalido</div>)}
-        <br />
-        <div class="form__div">
+        <div>
           <label for="" class="input_label"><b>Nombre completo</b></label> <br />
           <input type="text" class="input_field" placeholder="Luis Apellido" onChange={event => set_name(event.target.value)} value={name}/>
         </div>
-        <br />
-        <div class="form__div">
+        <div>
           <label for="" class="input_label"><b>Apodo</b></label> <br />
           <input type="text" class="input_field" placeholder="Lucho" defaultValue={name.split(' ')[0]}/>
         </div>
-      </form>
-      <br />
+      </div>
       <div className="boxed">
         <u>Nota</u>: Elige un apodo fácilmente identificable por todos tus compañeros;
         tu primer, segundo, ámbos nombres o tu nombre social son una buena opción. <b>Evita usar tu Gamer Tag</b> o
         cualquier apodo que sea difícil de relacionar contigo para alguien que no te conoce de primera mano.
         <br/>
         <br/>
-
-
         <div class="flex-parent-element">
           <div class="flex-child-element magenta">
             Felipe Rojas → Pipe ✔️<br/>
@@ -72,9 +67,6 @@ export const Form = () => {
             Vicente Mackenzie → 3122 ❌
           </div>
         </div>
-
-
-
       </div>
       </div>
   )
