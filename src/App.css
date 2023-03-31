@@ -4,15 +4,15 @@
   justify-content: center; /* For horizontal alignment */
   min-height: 100vh;
   justify-content: center;
-  background-color: #7289da; /*COLOR DE FONDO*/
+  background-color: #17181C; /*COLOR DE FONDO*/
   padding: 10vh 0;
 }
 
 .Container {
   margin: 0;
-  width: calc(100% / 3);
-  background-color: #36393e;
-  box-shadow: 0px 0px 10px 6px #1e2124;
+  width: calc(100% / 5);
+  background-color: #1D1E22;
+  box-shadow: 0px 0px 5px 3px #1e2124;
   height: 100%;
   padding: 2.5em;
 }
@@ -29,7 +29,6 @@
 }
 
 .App-header {
-  background-color: #8b19d6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
