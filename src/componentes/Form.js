@@ -31,65 +31,65 @@ export const Form = () => {
 
   return (
     <div className='Form gapped'>
-      <h>
+      <h1>
         <b>Ingrese sus datos</b>
-      </h>
-      <div class='gapped'>
+      </h1>
+      <div className='gapped'>
         <div>
-          <label class='input_label'>
+          <label className='input_label'>
             <b>Rol</b>
           </label>
           <br />
           <input
             type='text'
-            class='input_field'
+            className='input_field'
             placeholder='123456789-k'
             onChange={handle_rol}
             onBlur={rol_verification}
             value={rol}
           />
         </div>
-        {error1 && <div style={{color: '#e03434'}}>Rol Inválido</div>}
+        {error1 && <div className='error'>Rol Inválido</div>}
         <div>
-          <label class='input_label'>
+          <label className='input_label'>
             <b>Nombre completo</b>
           </label>
           <br />
           <input
             type='text'
-            class='input_field'
+            className='input_field'
             placeholder='Luis Apellido'
             onChange={event => set_name(event.target.value)}
             value={name}
           />
         </div>
         <div>
-          <label class='input_label'>
+          <label className='input_label'>
             <b>Apodo</b>
           </label>
           <br />
           <input
             type='text'
-            class='input_field'
+            className='input_field'
             placeholder='Lucho'
             defaultValue={name.split(' ')[0]}
           />
         </div>
       </div>
-      <div className='boxed'>
+      <div className='error'>
         <u>Nota</u>: Elige un apodo fácilmente identificable por todos tus compañeros; tu primer,
-        segundo, ámbos nombres o tu nombre social son una buena opción.
+        segundo, ámbos nombres o tu nombre social son una buena opción.&ensp;
         <b>Evita usar tu Gamer Tag</b> o cualquier apodo que sea difícil de relacionar contigo para
         alguien que no te conoce de primera mano.
         <br />
         <br />
-        <div class='flex-parent-element'>
-          <div class='flex-child-element magenta'>
-            Felipe Rojas → Pipe ✔️
+        <div className='examples'>
+          <div>
+            Felipe → Pipe ✔️
             <br />
-            Felipe Rojas → pyeom ❌
+            Felipe → pyeom ❌
           </div>
-          <div class='flex-child-element green'>
+          <div>
             Vicente Mackenzie → Makenki ✔️
             <br />
             Vicente Mackenzie → 3122 ❌
