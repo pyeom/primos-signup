@@ -87,6 +87,7 @@ button:hover {
 
 .cancel:hover{
   text-decoration:underline;
+}
 
 input::placeholder {
   opacity: 0;
@@ -98,7 +99,7 @@ input:focus::placeholder {
 
 /*Input focus move up label*/
 .input_field:focus + .input_label {
-  top: -0.5em;
+  top: -0.75em;
   left: 0.8rem;
   font-size: 50%;
   font-weight: 500;
@@ -107,7 +108,7 @@ input:focus::placeholder {
 
 /*Input focus sticky top label*/
 .input_field:not(:placeholder-shown).input_field:not(:focus) + .input_label {
-  top: -0.5em;
+  top: -0.75em;
   left: 0.8rem;
   font-size: 50%;
   font-weight: 500;
