@@ -44,12 +44,15 @@ export const Form = () => {
             onBlur={rol_verification}
             value={rol}
           />
-          <label for="" class="input_label">
-          <b>Rol</b>
+          <label
+            for=''
+            class='input_label'
+          >
+            <b>Rol</b>
           </label>
         </div>
         {error1 && <div className='error'>Rol Inválido</div>}
-      <div className='gapped'>
+        <div className='gapped'>
           <input
             type='text'
             className='input_field'

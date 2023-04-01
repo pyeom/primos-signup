@@ -4,14 +4,14 @@
   justify-content: center; /* For horizontal alignment */
   min-height: 100vh;
   justify-content: center;
-  background-color: #17181C; /*COLOR DE FONDO*/
+  background-color: #17181c; /*COLOR DE FONDO*/
   padding: 10vh 0;
 }
 
 .Container {
   margin: 0;
   width: calc(100% / 5);
-  background-color: #1D1E22;
+  background-color: #1d1e22;
   box-shadow: 0px 0px 5px 3px #1e2124;
   height: 100%;
   padding: 2.5em;

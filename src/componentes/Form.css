@@ -6,10 +6,10 @@
 .input_label {
   color: #e4e4e4;
   position: absolute;
-  background: #1D1E22; /*COLOR DE FONDO*/
+  background: #1d1e22; /*COLOR DE FONDO*/
   left: 1rem;
   top: 0.5rem;
-  transition: .3s;
+  transition: 0.3s;
   pointer-events: none;
 }
 
@@ -23,11 +23,11 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  color: #5168F4;
-  border: 1px solid #5168F4;
+  color: #5168f4;
+  border: 1px solid #5168f4;
   outline: none;
   background: none;
-  padding: .8em 1.2em;
+  padding: 0.8em 1.2em;
   border-radius: 10px;
 }
 
@@ -37,7 +37,7 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  padding: .8rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   border: 1px solid #f23751;
   border-radius: 10px;
   background-color: #a8172b70;
@@ -70,18 +70,18 @@ input:focus::placeholder {
 }
 
 /*Input focus move up label*/
-.input_field:focus + .input_label{
+.input_field:focus + .input_label {
   top: -0.5em;
-  left: .8rem;
+  left: 0.8rem;
   font-size: 50%;
   font-weight: 500;
   z-index: 10;
 }
 
 /*Input focus sticky top label*/
-.input_field:not(:placeholder-shown).input_field:not(:focus)+ .input_label{
-  top: -0.5rem;
-  left: .8rem;
+.input_field:not(:placeholder-shown).input_field:not(:focus) + .input_label {
+  top: -0.5em;
+  left: 0.8rem;
   font-size: 50%;
   font-weight: 500;
   z-index: 10;
