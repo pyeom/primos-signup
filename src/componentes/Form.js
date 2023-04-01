@@ -34,10 +34,6 @@ export const Form = ({fullname}) => {
       </h1>
       <div className='gapped'>
         <div>
-          <label className='input_label'>
-            <b>Nombre completo</b>
-          </label>
-          <br />
           <input
             type='text'
             className='box input_field capitalize'
@@ -45,12 +41,14 @@ export const Form = ({fullname}) => {
             onChange={event => set_name(event.target.value)}
             value={name}
           />
-        </div>
-        <div>
-          <label className='input_label'>
+          <label
+            for=''
+            class='input_label'
+          >
             <b>Rol</b>
           </label>
-          <br />
+        </div>
+        <div className='gapped'>
           <input
             type='text'
             className='box input_field'
@@ -63,9 +61,12 @@ export const Form = ({fullname}) => {
         {error_1 && <div className='box error'>Rol Inválido</div>}
         <div>
           <label className='input_label'>
-            <b>Apodo</b>
+            <b>Nombre completo</b>
           </label>
-          <br />
+        </div>
+      </div>
+      <div className='gapped'>
+        <div>
           <input
             type='text'
             className='box input_field capitalize'
@@ -73,6 +74,9 @@ export const Form = ({fullname}) => {
             onFocus={_ => set_error_2(true)}
             defaultValue={name.split(' ')[0]}
           />
+          <label className='input_label'>
+            <b>Apodo</b>
+          </label>
         </div>
       </div>
       {error_2 && (
