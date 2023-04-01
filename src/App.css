@@ -1,16 +1,14 @@
 .App {
   display: flex;
   flex-wrap: wrap; /* Optional. only if you want the items to wrap */
-  justify-content: center; /* For horizontal alignment */
+  justify-content: space-evenly; /* For horizontal alignment */
   min-height: 100vh;
-  justify-content: center;
   background-color: #17181c; /*COLOR DE FONDO*/
-  padding: 10vh 0;
+  padding: 10vh;
 }
 
 .Container {
   margin: 0;
-  width: calc(100% / 5);
   background-color: #1d1e22;
   box-shadow: 0px 0px 5px 3px #1e2124;
   height: 100%;
