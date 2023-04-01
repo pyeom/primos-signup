@@ -34,8 +34,17 @@ export default function App({pca}) {
     <MsalProvider instance={pca}>
       {graphData && (
         <div className='App'>
-          <div className='Container'>
-            <Form />
+          <div
+            className='Container'
+            style={{width: '23%'}}
+          >
+            <Form fullname={graphData.displayName} />
+          </div>
+          <div
+            className='Container'
+            style={{width: '50%'}}
+          >
+            <Schedule />
           </div>
         </div>
       )}
