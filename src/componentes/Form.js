@@ -36,10 +36,6 @@ export const Form = () => {
       </h1>
       <div className='gapped'>
         <div>
-          <label className='input_label'>
-            <b>Rol</b>
-          </label>
-          <br />
           <input
             type='text'
             className='input_field'
@@ -48,13 +44,12 @@ export const Form = () => {
             onBlur={rol_verification}
             value={rol}
           />
+          <label for="" class="input_label">
+          <b>Rol</b>
+          </label>
         </div>
         {error1 && <div className='error'>Rol Inválido</div>}
-        <div>
-          <label className='input_label'>
-            <b>Nombre completo</b>
-          </label>
-          <br />
+      <div className='gapped'>
           <input
             type='text'
             className='input_field'
@@ -62,18 +57,22 @@ export const Form = () => {
             onChange={event => set_name(event.target.value)}
             value={name}
           />
-        </div>
-        <div>
           <label className='input_label'>
-            <b>Apodo</b>
+            <b>Nombre completo</b>
           </label>
-          <br />
+        </div>
+      </div>
+      <div className='gapped'>
+        <div>
           <input
             type='text'
             className='input_field'
             placeholder='Lucho'
             defaultValue={name.split(' ')[0]}
           />
+          <label className='input_label'>
+            <b>Apodo</b>
+          </label>
         </div>
       </div>
       <div className='error'>
