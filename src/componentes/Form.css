@@ -35,7 +35,21 @@
   outline: none;
 }
 
+@keyframes increase {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 200px;
+  }
+}
+
 .error {
+  max-height: 0px;
+  animation-name: increase;
+  overflow: hidden;
+  animation-duration: 1.4s;
+  animation-fill-mode: forwards;
   font-size: 14px;
   border: 1px solid #f23751;
   background-color: #a8172b70;
