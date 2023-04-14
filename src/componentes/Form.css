@@ -104,8 +104,8 @@ button:hover {
   background-color: #303e92;
 }
 
-.cancel:hover{
-  text-decoration:underline;
+.cancel:hover {
+  text-decoration: underline;
 }
 
 input::placeholder {
