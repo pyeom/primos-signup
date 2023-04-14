@@ -44,17 +44,22 @@
   }
 }
 
+.info {
+  font-size: 14px;
+  border: 1px solid #5168f4;
+  background-color: #303e92;
+  align-items: center;
+  text-align: justify;
+}
+
 .error {
   max-height: 0px;
   animation-name: increase;
   overflow: hidden;
   animation-duration: 1.4s;
   animation-fill-mode: forwards;
-  font-size: 14px;
-  border: 1px solid #f23751;
+  border-color: #f23751;
   background-color: #a8172b70;
-  align-items: center;
-  text-align: justify;
 }
 
 .examples {
