@@ -9,9 +9,9 @@ import {InteractionStatus, InteractionRequiredAuthError} from '@azure/msal-brows
 import {loginRequest} from './authConfig'
 
 import {callMsGraph} from './utils/MsGraphApiCall'
-import { Schedule } from './componentes/Schedule'
+import {Schedule} from './componentes/Schedule'
 
-export default function App({pca}) {
+function Content() {
   const {instance, inProgress} = useMsal()
   const [graphData, setGraphData] = useState(null)
 
@@ -30,24 +30,29 @@ export default function App({pca}) {
     }
   }, [inProgress, graphData, instance])
 
+  if (graphData)
+    return (
+      <div className='App'>
+        <div
+          className='Container'
+          style={{width: '23%'}}
+        >
+          <Form fullname={graphData.displayName} />
+        </div>
+        <div
+          className='Container'
+          style={{width: '50%'}}
+        >
+          <Schedule />
+        </div>
+      </div>
+    )
+}
+
+export default function App({pca}) {
   return (
     <MsalProvider instance={pca}>
-      {graphData && (
-        <div className='App'>
-          <div
-            className='Container'
-            style={{width: '23%'}}
-          >
-            <Form fullname={graphData.displayName} />
-          </div>
-          <div
-            className='Container'
-            style={{width: '50%'}}
-          >
-            <Schedule />
-          </div>
-        </div>
-      )}
+      <Content />
     </MsalProvider>
   )
 }

@@ -5,6 +5,7 @@ import './Form.css'
 export const Form = ({fullname}) => {
   const [name, set_name] = useState(fullname.toLowerCase())
   const [rol, set_rol] = useState('')
+  const [schedule, set_schedule] = useState(null)
   const [error_1, set_error_1] = useState(false)
   const [error_2, set_error_2] = useState(false)
 
@@ -14,10 +15,8 @@ export const Form = ({fullname}) => {
 
     if (isNaN(usm_id)) return
     if (value.length > 9) {
-      if (value[9] !== '-')
-        value = usm_id + '-' + value.slice(9)
-      if (value.length > 10 && isNaN(value[10]) && value[10] !== 'k')
-        return
+      if (value[9] !== '-') value = usm_id + '-' + value.slice(9)
+      if (value.length > 10 && isNaN(value[10]) && value[10] !== 'k') return
     }
     set_rol(value)
   }
@@ -58,7 +57,7 @@ export const Form = ({fullname}) => {
             <b>Rol</b>
           </label>
         </div>
-        {error_1 && <div className='box error'>Rol Inválido</div>}
+        {error_1 && <div className='box info error'>Rol Inválido</div>}
       </div>
       <div className='gapped'>
         <div>
@@ -75,11 +74,11 @@ export const Form = ({fullname}) => {
         </div>
       </div>
       {error_2 && (
-        <div className='box error'>
+        <div className='box info error'>
           <u>Nota</u>: Elige un apodo fácilmente identificable por todos tus compañeros; tu primer,
           segundo, ámbos nombres o tu nombre social son una buena opción.&ensp;
-          <b>Evita usar tu Gamer Tag</b> o cualquier apodo que sea difícil de relacionar contigo para
-          alguien que no te conoce de primera mano.
+          <b>Evita usar tu Gamer Tag</b> o cualquier apodo que sea difícil de relacionar contigo
+          para alguien que no te conoce de primera mano.
           <br />
           <br />
           <div className='examples'>
@@ -96,20 +95,51 @@ export const Form = ({fullname}) => {
           </div>
         </div>
       )}
-      <div className='button-container'>
-        <button
-          className='box cancel'
-          type="button"
-        >
-          <b>Cancelar</b>
-        </button>
-        <button
-          className='box submit'
-          type="button"
-        >
-          <b>Enviar</b>
-        </button>
+      <div className='gapped'>
+        <div>
+          <input
+            disabled={schedule}
+            type='password'
+            className='box input_field capitalize'
+          />
+          <label className='input_label'>
+            <b>Clave del SIGA</b>
+          </label>
+        </div>
+        <div className='box info'>
+          Tus credenciales de acceso al SIGA serán utilizadas exclusivamente para obtener tu horario
+          y no serán almacenadas de ninguna forma. Recuerda que este proyecto es open source, por lo
+          que puedes revisar cómo serán tratados tus datos diréctamente en el código fuente
+          <a href='https://github.com/m3122/primos-signup'>Front-end</a>
+          <a href='https://github.com/lilkimo/primos-signup-backend'>Back-end</a>
+        </div>
       </div>
+      {!schedule ? (
+        <div className='button-container'>
+          <button
+            className='box submit'
+            type='button'
+            onClick={_ => set_schedule({})}
+          >
+            <b>Importar Horario</b>
+          </button>
+        </div>
+      ) : (
+        <div className='button-container'>
+          <button
+            className='box cancel'
+            type='button'
+          >
+            <b>Cancelar</b>
+          </button>
+          <button
+            className='box submit'
+            type='button'
+          >
+            <b>Enviar</b>
+          </button>
+        </div>
+      )}
     </div>
   )
 }
