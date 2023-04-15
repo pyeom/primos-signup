@@ -56,8 +56,8 @@ export const Form = ({fullname}) => {
           <label class='input_label'>
             <b>Rol</b>
           </label>
+        {error_1 && <div className='box info error1'>Rol Inválido</div>}
         </div>
-        {error_1 && <div className='box info error'>Rol Inválido</div>}
       </div>
       <div className='gapped'>
         <div>

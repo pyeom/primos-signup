@@ -35,14 +35,28 @@
   outline: none;
 }
 
-@keyframes increase {
-  from {
+@keyframes scale {
+  0% {
+    transform: scaleY(0);
     max-height: 0px;
   }
-  to {
-    max-height: 200px;
+  100% {
+    transform: scaleY(1);
+    max-height: 220px;
   }
 }
+
+@keyframes scale1 {
+  0% {
+    transform: scaleY(0);
+    max-height: 0px;
+  }
+  100% {
+    transform: scaleY(1);
+    max-height: 50px;
+  }
+}
+
 
 .info {
   font-size: 14px;
@@ -52,12 +66,25 @@
   text-align: justify;
 }
 
-.error {
-  max-height: 0px;
-  animation-name: increase;
+.error1 {
+  overflow-y: auto;
+  transform-origin: top;
+  animation-duration: 0.8s;
+  animation-name: scale1;
   overflow: hidden;
-  animation-duration: 1.4s;
-  animation-fill-mode: forwards;
+  border-color: #f23751;
+  background-color: #a8172b70;
+}
+
+
+.error {
+  height: 100%;
+  overflow-y: auto;
+  transform-origin: top;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.8s;
+  animation-name: scale;
+  overflow: hidden;
   border-color: #f23751;
   background-color: #a8172b70;
 }
