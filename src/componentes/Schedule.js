@@ -1,11 +1,30 @@
 import React from 'react'
+import {useState, useRef} from 'react'
 import './Schedule.css'
 import {mod} from '../utils/Math'
 import {CircleOne} from '../assets/circle_one'
-// import CircleTwo from '../assets/circle_two.svg'
+import {CircleTwo} from '../assets/circle_two'
 // import CircleThree from '../assets/circle_three.svg'
 
+
 export const Schedule = ({schedule}) => {
+  const [schedulesi, setSchedulesi] = useState(schedule.map(bool => bool? 1: 0))
+  
+
+  const toggleBlock = block => {
+    const newArray = [...schedulesi]
+    console.log(block)
+    if (newArray[block] != 1){
+      newArray[block]= newArray[block]==0? 2: 0
+      setSchedulesi(newArray)
+      console.log(schedulesi)
+    }
+    else{
+      setSchedulesi(newArray)
+      console.log(schedulesi)
+    }
+  }
+
   return (
     <div className='Schedule gapped'>
       <h1>
@@ -16,7 +35,12 @@ export const Schedule = ({schedule}) => {
           size='1em'
           fill='#5168f4'
         />
-        &ensp;Importa tu horario
+        &ensp;Importa tu horario&nbsp;
+        <CircleTwo
+          size='1em'
+          fill='#5168f4'
+        />
+        &ensp;Ajusta tu disponibilidad
       </h2>
       {/* <b>Ajusta tu disponibilidad</b>&gt;
         <b>Ingresa tu horario deseado</b> */}
@@ -29,7 +53,7 @@ export const Schedule = ({schedule}) => {
             </b>
           </span>
         ))}
-        {schedule.map((value, i) => {
+        {schedulesi.map((value, i) => {
           let even = mod(i, 8 * 2) < 8
           let header =
             i % 8 ? null : (
@@ -38,14 +62,16 @@ export const Schedule = ({schedule}) => {
               </span>
             )
           let classes = ['booked']
+          let classesamarillo = ['bussy']
           if (value) {
             let modulo = mod(i, 8)
-            if (mod(i - 1, 8) < modulo && !schedule[i - 1]) classes.push('top-border')
-            if (mod(i + 1, 8) > modulo && !schedule[i + 1]) classes.push('bottom-border')
+            if (mod(i - 1, 8) < modulo && !schedulesi[i - 1]) classes.push('top-border')
+            if (mod(i + 1, 8) > modulo && !schedulesi[i + 1]) classes.push('bottom-border')
           }
           let cell = (
-            <span className={'row-divisor' + (even ? ' even-column' : '')}>
-              {value && <div className={classes.join(' ')} />}
+            <span className={'row-divisor' + (even ? ' even-column' : '')} onClick={_ => toggleBlock(i)}>
+              {(value == 1) && <div className={classes.join(' ')} />}
+              {(value == 2) && <div className={classesamarillo.join(' ')} />}
             </span>
           )
           return [header, cell]
