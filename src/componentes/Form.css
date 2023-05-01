@@ -71,17 +71,6 @@
   justify-content: space-between;
 }
 
-h1 {
-  font-size: 28px;
-  margin: 0;
-}
-.gapped {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  row-gap: 1em;
-}
-
 .capitalize {
   text-transform: capitalize;
 }
@@ -94,22 +83,20 @@ h1 {
 button {
   font-size: 16px;
   border: none;
+  background-color: #5168f4 !important;
 }
 
 button:hover {
   cursor: pointer;
 }
 
-.submit {
-  background-color: #5168f4;
+button:active {
+  background-color: #303e92 !important;
 }
 
-.submit:active {
-  background-color: #303e92;
-}
-
-.cancel:hover {
-  text-decoration: underline;
+button:disabled {
+  cursor: not-allowed;
+  background-color: #303e92 !important;
 }
 
 input::placeholder {

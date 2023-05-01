@@ -12,6 +12,7 @@ import {callMsGraph} from './utils/MsGraphApiCall'
 import {Schedule} from './componentes/Schedule'
 
 function Content() {
+  // MSAL start
   const {instance, inProgress} = useMsal()
   const [graphData, setGraphData] = useState(null)
 
@@ -29,6 +30,8 @@ function Content() {
         })
     }
   }, [inProgress, graphData, instance])
+  const [schedule, set_schedule] = useState(null)
+  // MSAL end
 
   if (graphData)
     return (
@@ -37,14 +40,21 @@ function Content() {
           className='Container'
           style={{width: '23%'}}
         >
-          <Form fullname={graphData.displayName} />
+          <Form
+            fullname={graphData.displayName}
+            mail={graphData.mail.split('@')}
+            is_schedule={schedule !== null}
+            set_schedule={set_schedule}
+          />
         </div>
-        <div
-          className='Container'
-          style={{width: '50%'}}
-        >
-          <Schedule />
-        </div>
+        {schedule && (
+          <div
+            className='Container'
+            style={{width: '50%'}}
+          >
+            <Schedule schedule={schedule} />
+          </div>
+        )}
       </div>
     )
 }
