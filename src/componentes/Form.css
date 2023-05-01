@@ -37,26 +37,16 @@
 
 @keyframes scale {
   0% {
-    transform: scaleY(0);
     max-height: 0px;
+    padding: 0rem 1.2rem;
+  }
+  10% {
+    padding: 0.8rem 1.2rem;
   }
   100% {
-    transform: scaleY(1);
-    max-height: 220px;
+    max-height: 1080px;
   }
 }
-
-@keyframes scale1 {
-  0% {
-    transform: scaleY(0);
-    max-height: 0px;
-  }
-  100% {
-    transform: scaleY(1);
-    max-height: 50px;
-  }
-}
-
 
 .info {
   font-size: 14px;
@@ -66,23 +56,10 @@
   text-align: justify;
 }
 
-.error1 {
-  overflow-y: auto;
-  transform-origin: top;
-  animation-duration: 0.8s;
-  animation-name: scale1;
-  overflow: hidden;
-  border-color: #f23751;
-  background-color: #a8172b70;
-}
-
-
 .error {
-  height: 100%;
   overflow-y: auto;
   transform-origin: top;
-  animation-timing-function: ease-in-out;
-  animation-duration: 0.8s;
+  animation-duration: 3s;
   animation-name: scale;
   overflow: hidden;
   border-color: #f23751;
