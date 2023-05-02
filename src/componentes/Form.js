@@ -2,7 +2,7 @@ import React from 'react'
 import {useState, useRef} from 'react'
 import './Form.css'
 
-export const Form = ({fullname, mail, is_schedule, set_schedule}) => {
+export const Form = ({fullname, mail, is_schedule, set_schedule, schedule_ref}) => {
   const [name, set_name] = useState(fullname.toLowerCase())
   const [error_1, set_error_1] = useState(false)
   const [rol, set_rol] = useState('')
@@ -145,7 +145,7 @@ export const Form = ({fullname, mail, is_schedule, set_schedule}) => {
           {error_3 && <div className='box info error'>Clave incorrecta</div>}
           <div className='button-container'>
             <button
-              className='box'
+              className='box submit'
               type='button'
               disabled={disable_button}
               onClick={_ => get_schedule()}
@@ -156,11 +156,19 @@ export const Form = ({fullname, mail, is_schedule, set_schedule}) => {
         </>
       ) : (
         <div className='button-container'>
+          {<button
+            className='box cancel'
+            type="button"
+            onClick={_ => schedule_ref.current?.back()}
+          >
+            <b>Atrás</b>
+          </button>}
           <button
             className='box submit'
             type='button'
+            onClick={_ => schedule_ref.current?.next()}
           >
-            <b>Enviar</b>
+            <b>Siguiente</b>
           </button>
         </div>
       )}

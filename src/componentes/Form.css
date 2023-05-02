@@ -80,22 +80,32 @@
   column-gap: 1em;
 }
 
+.cancel:hover {
+  text-decoration: underline;
+}
+
+.submit {
+  background-color: #5168f4 !important;
+}
+
 button {
   font-size: 16px;
   border: none;
-  background-color: #5168f4 !important;
 }
 
 button:hover {
   cursor: pointer;
 }
 
-button:active {
+.submit:active {
   background-color: #303e92 !important;
 }
 
 button:disabled {
   cursor: not-allowed;
+}
+
+.submit:disabled {
   background-color: #303e92 !important;
 }
 

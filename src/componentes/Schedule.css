@@ -55,9 +55,13 @@
 }
 
 .bussy {
-  /* -webkit-mask-image: url(../stripes.svg);
-  mask-image: url(../stripes.svg); */
-  background-color: #f1ff2e;
+  background-color: #f4556b;
+  width: 100%;
+  height: 100%;
+}
+
+.available {
+  background-color: #68f451;
   width: 100%;
   height: 100%;
 }

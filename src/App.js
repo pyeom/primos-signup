@@ -1,6 +1,6 @@
 import './App.css'
 import {Form} from './componentes/Form'
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useRef} from 'react'
 
 // MSAL imports
 import {MsalProvider} from '@azure/msal-react'
@@ -30,8 +30,10 @@ function Content() {
         })
     }
   }, [inProgress, graphData, instance])
-  const [schedule, set_schedule] = useState(null)
   // MSAL end
+
+  const [schedule, set_schedule] = useState(null)
+  const schedule_ref = useRef();
 
   if (graphData)
     return (
@@ -45,6 +47,7 @@ function Content() {
             mail={graphData.mail.split('@')}
             is_schedule={schedule !== null}
             set_schedule={set_schedule}
+            schedule_ref={schedule_ref}
           />
         </div>
         {schedule && (
@@ -52,7 +55,10 @@ function Content() {
             className='Container'
             style={{width: '50%'}}
           >
-            <Schedule schedule={schedule} />
+            <Schedule
+              booked_schedule={schedule}
+              ref={schedule_ref}
+            />
           </div>
         )}
       </div>
