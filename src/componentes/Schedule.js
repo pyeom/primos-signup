@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useState, forwardRef, useImperativeHandle} from 'react'
 import './Schedule.css'
 import {mod} from '../utils/Math'
 import {CircleOne} from '../assets/circle_one'
 import {CircleTwo} from '../assets/circle_two'
-// import CircleThree from '../assets/circle_three.svg'
+import {CircleThree} from '../assets/circle_three'
+import {Arrow} from '../assets/arrow'
 
 
 export const Schedule = forwardRef(({booked_schedule}, ref) => {
@@ -43,20 +44,29 @@ export const Schedule = forwardRef(({booked_schedule}, ref) => {
       <h1>
         <b>Rellena tu horario</b>
       </h1>
-      <h2>
-        <CircleOne
-          size='1em'
-          fill='#5168f4'
-        />
-        &ensp;Importa tu horario&nbsp;
-        <CircleTwo
-          size='1em'
-          fill='#5168f4'
-        />
-        &ensp;Ajusta tu disponibilidad
-      </h2>
-      {/* <b>Ajusta tu disponibilidad</b>&gt;
-        <b>Ingresa tu horario deseado</b> */}
+      <div className='steps'>
+        <h2 style={{color: '#a2a2a2'}}>
+          <CircleOne
+            size='1em'
+            fill='#a2a2a2'
+          />
+          &ensp;Importa tu horario
+        </h2>
+        <h2 style={!state? null: {color: '#a2a2a2'}}>
+          <CircleTwo
+            size='1em'
+            fill={!state? '#5168f4': '#a2a2a2'}
+          />
+          &ensp;Ajusta tu disponibilidad
+        </h2>
+        <h2 style={state? null: {color: '#a2a2a2'}}>
+          <CircleThree
+            size='1em'
+            fill={state? '#5168f4': '#a2a2a2'}
+          />
+          &ensp;Ingresa tu horario deseado
+        </h2>
+      </div>
       <div className='container'>
         <span />
         {[...Array(8).keys()].map(i => (

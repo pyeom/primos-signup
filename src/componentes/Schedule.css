@@ -77,11 +77,16 @@
 }
 
 h2 {
-  width: 100%;
   display: flex;
   align-items: center;
 }
 
 img {
   height: 1.2em;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1em;
 }

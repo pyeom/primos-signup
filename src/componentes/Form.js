@@ -43,8 +43,10 @@ export const Form = ({fullname, mail, is_schedule, set_schedule, schedule_ref}) 
       }),
     }
     await fetch('http://127.0.0.1:8000/api/schedule', request_options).then(response => {
-      if (response.ok) response.json().then(r => set_schedule(r.schedule))
-      else set_error_3(true)
+      if (response.ok)
+        response.json().then(r => set_schedule(r.schedule))
+      else
+        set_error_3(true)
     })
     set_disable_button(false)
   }
