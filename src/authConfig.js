@@ -14,9 +14,9 @@ const isFirefox = firefox > 0 // Only needed if you need to support the redirect
 // Config object to be passed to Msal on creation
 export const msalConfig = {
   auth: {
-    clientId: '6a96b7cd-929d-483d-8c24-33f5a18b9afc',
-    redirectUri: 'http://localhost:3000/',
-    postLogoutRedirectUri: 'http://localhost:3000/',
+    clientId: 'cee1c9ae-df37-47be-9512-4514273ec665',
+    redirectUri: 'https://panda-growing-dove.ngrok-free.app/',
+    postLogoutRedirectUri: 'https://panda-growing-dove.ngrok-free.app/',
   },
   cache: {
     cacheLocation: 'localStorage',
